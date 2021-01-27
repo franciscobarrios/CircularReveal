@@ -18,23 +18,25 @@ private val LightColorPalette = lightColors(
 	primaryVariant = purple700,
 	secondary = teal200,
 	background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
+	surface = Color.White,
+	onPrimary = Color.White,
+	onSecondary = Color.Black,
+	onBackground = Color.Black,
+	onSurface = Color.Black,
 )
 
 @Composable
-fun CircularRevealTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
-	val colors = if (darkTheme) {
-		DarkColorPalette
-	} else {
-		LightColorPalette
-	}
-	
-	MaterialTheme(
-		colors = colors,
+fun CircularRevealTheme(
+	darkTheme: Boolean = isSystemInDarkTheme(),
+	content: @Composable() () -> Unit
+) {
+    /*val colors = if (darkTheme) {
+        DarkColorPalette
+    } else {
+        LightColorPalette
+    }*/
+    MaterialTheme(
+		colors = LightColorPalette,
 		typography = typography,
 		shapes = shapes,
 		content = content

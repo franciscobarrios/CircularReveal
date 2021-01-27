@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -36,24 +37,31 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.4.21'
+        kotlinCompilerVersion kotlin_version
     }
 }
 
 dependencies {
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-rc01'
+
+    // Compose
+    implementation "androidx.ui:ui-tooling:$compose_version"
     implementation "androidx.compose.ui:ui:$compose_version"
+    //implementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "androidx.compose.animation:animation:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha06'
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
 
     // Navigation
     implementation "androidx.navigation:navigation-compose:$nav_compose_version"
 
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

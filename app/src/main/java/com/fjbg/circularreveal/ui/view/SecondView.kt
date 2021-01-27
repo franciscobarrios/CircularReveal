@@ -11,11 +11,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun home(
-    navigate: () -> Unit,
-) {
+fun secondView() {
     commonView(
-        action = navigate,
+        action = null,
         content = {
             Box(
                 modifier = Modifier
@@ -24,7 +22,7 @@ fun home(
             ) {
                 Text(
                     fontFamily = FontFamily.Serif,
-                    text = "this is the Home view",
+                    text = "this is the Second view",
                     fontSize = 32.sp
                 )
             }

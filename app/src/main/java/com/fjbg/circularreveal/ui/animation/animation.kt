@@ -11,7 +11,7 @@ val alphaState = FloatPropKey()
 
 enum class FabState { Idle, Exploded }
 
-const val animationDuration = 700
+const val animationDuration = 2000
 
 fun fabSizeTransitionDefinition(): TransitionDefinition<FabState> {
     return transitionDefinition {
